@@ -225,6 +225,17 @@
   @media (max-width: 400px) { .nb { --lh: 1.5rem; } }
   @media (min-width: 861px) and (max-height: 760px) { .nb { --lh: 1.6rem; --pad: 1.1rem; } .plan__copy > p { display: none; } }
   @media (prefers-reduced-motion: reduce) { .leaf { transform: rotateY(calc(var(--f) * -180deg)); } }
+  /* телефон: без 3D – Safari на iPhone склеивает стороны листов в кашу. Лист уезжает влево и гаснет,
+     под ним открывается следующий. Список этапов скрыт – недели и так написаны на страницах, тетрадь крупнее */
+  @media (max-width: 860px) {
+    .stages { display: none; }
+    .nb { --pg: min(calc(100vw - 2 * var(--v-gutter) - 1rem), calc((100svh - 15.5rem) / 1.38), 20rem); perspective: none; transform-style: flat; }
+    .nb__base, .nb__staple { transform: none; }
+    .leaf { transform: translateX(calc(var(--f) * -14%)); opacity: calc(1 - var(--f) * 1.4); transform-style: flat; z-index: calc(10 - var(--i)); will-change: transform, opacity; }
+    .leaf__back { display: none; }
+    .leaf__face { -webkit-backface-visibility: visible; backface-visibility: visible; }
+    .leaf__face::after { opacity: 0; }
+  }
 
   /* ---- 4 · урок по минутам: лента ----------------------------------------------- */
   .les { height: 100%; display: flex; flex-direction: column; justify-content: center; padding-top: 4rem; }
