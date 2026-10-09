@@ -125,15 +125,6 @@
     .hero__copy .v-lede { margin-top: var(--v-4); font-size: var(--v-t-base); }
   }
 
-  /* ---- 1б · портфолио: фото слева со шторкой, биография справа строками ---------- */
-  .pf { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: var(--v-8) var(--v-9); align-items: center; }
-  .pf__fig { margin: 0; max-width: 26rem; width: 100%; border-radius: var(--v-radius); overflow: hidden; background: var(--nb-paper); box-shadow: var(--v-e2); }
-  .pf__fig img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: contain; padding: 6%; mix-blend-mode: multiply; }
-  .pf__fig figcaption { padding: var(--v-3) var(--v-5) var(--v-4); border-top: 1px solid var(--v-hair); font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-lg); }
-  .pf__copy .v-label { display: block; margin-bottom: var(--v-5); }
-  .pf__copy > p { margin-top: var(--v-5); color: var(--v-ink-soft); max-width: 46ch; text-wrap: pretty; }
-  @media (max-width: 860px) { .pf { grid-template-columns: 1fr; gap: var(--v-6); } .pf__fig { max-width: 20rem; } }
-
   /* ---- 2 · кому и зачем: три строки с линиями + фото учебников --------------- */
   .komu { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: var(--v-8) var(--v-9); align-items: center; }
   .komu__copy .v-label { display: block; margin-bottom: var(--v-5); }
@@ -341,7 +332,6 @@
   <header class="bar">
     <a class="bar__mark" href="#top"><i aria-hidden="true"></i><span>{{компания}}</span></a>
     <nav class="tabs" aria-label="Закладки">
-      <a href="#portfolio" data-long>Портфолио</a>
       <a href="#plan">Программа</a>
       <a href="#urok">Урок</a>
       <a href="#ceny">Цены</a>
@@ -399,26 +389,6 @@
           <p class="hero__label">Почему курсы бросают через месяц</p>
           <h2 class="v-display">Без программы курс – это «посмотрел видео и забыл»</h2>
           <p class="v-lede">Через месяц непонятно, куда идёшь, и курс бросают. <b>Поэтому порядок такой:</b> пробный урок, программа на 8 недель по модулям, и только потом оплата.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 1б · ПОРТФОЛИО: фото со шторкой слева, биография строками. Факты биографии – слотами -->
-    <section class="v-section v-section--tight" data-v-act="flow" id="portfolio" aria-label="Портфолио">
-      <div class="v-wrap pf">
-        <figure class="pf__fig" data-v-reveal="left" data-v-reveal-at="0.1 0.45">
-          <img src="assets/portfolio-fox.webp" alt="Иллюстрация: рыжий лисёнок" width="626" height="626" loading="lazy">
-          <figcaption>Портфолио</figcaption>
-        </figure>
-        <div class="pf__copy" data-v-in data-v-stagger="70">
-          <span class="v-label">Портфолио</span>
-          <h2 class="v-display v-display--lg">Кто собрал этот курс</h2>
-          <p>{{преподаватель}} – автор программы и преподаватель курса «{{название-курса}}». Курс вырос из простого наблюдения: видеоуроки бросают, когда не видно, куда идёшь. Поэтому здесь программа по модулям и итог каждые две недели.</p>
-          <ul class="lines">
-            <li><b>Образование</b><span>{{образование}}</span></li>
-            <li><b>Опыт</b><span>{{опыт}}</span></li>
-            <li><b>Как учит</b><span>Одна тема за урок, практика на ваших задачах, обратная связь после каждого урока.</span></li>
-          </ul>
         </div>
       </div>
     </section>
